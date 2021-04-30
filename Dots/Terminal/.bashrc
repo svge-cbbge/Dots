@@ -43,21 +43,10 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOLE"/gtk-2.0/gtkrc
 alias v='sudo vim'
 alias m='sudo eopkg clean dc rmo ur up'
 alias c='clear'
-alias p='sudo vim ~/.config/picom/picom.conf'
-alias u='sudo vim ~/.Xresources'
-alias b='sudo vim ~/.config/bspwm/bspwmrc'
-alias sx='sudo vim ~/.config/sxhkd/sxhkdrc'
-alias ba='sudo vim ~/.bashrc'
-alias po='sudo vim ~/.config/polybar/config'
 alias pkg='sudo eopkg'
-alias openrgb='sudo ~/OpenRGB/openrgb'
-alias weather='curl wttr.in/koh_samui'
-alias light-mode='~/dark-mode'
-alias dark-mode='~/light-mode'
 alias toggle-light-dark='~/toggle-light-dark'
 alias slavfetch='neofetch --source ~/.config/neofetch/adidas.txt'
 
-export PATH="$HOME/.dynamic-colors/bin:$PATH"
-export SPICETIFY_INSTALL="/home/aleksi/spicetify-cli"
+export SPICETIFY_INSTALL="~/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
