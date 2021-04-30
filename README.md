@@ -26,3 +26,5 @@ Color scheme and spotify module for polybar from [here](https://github.com/Choco
 Spotify themed with spicetify-cli and Midnight-Light from [spicetify-themes](https://github.com/morpheusthewhite/spicetify-themes/)  
   
 Rofi uses config from [polybar-themes](https://github.com/adi1090x/polybar-themes)  
+
+[Preview](svge-cbbge.github.com/Dots/img/UnixPorn.png)
