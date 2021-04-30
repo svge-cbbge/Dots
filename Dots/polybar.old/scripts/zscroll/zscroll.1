@@ -1,0 +1,85 @@
+.\" Manpage for zscroll.
+.\" Please make an issue on the online repository if you find errors or typos.
+.TH ZSCROLL 1 "11 MARCH 2015" "zscroll 1.0" "zscroll man page"
+.SH NAME
+zscroll - A text scroller for panels or terminals 
+.SH SYNOPSIS
+zscroll [\fIOPTIONS\fR] [scroll-text or shell command]
+.SH DESCRIPTION
+Zscroll is used to create continuously scrolling text (e.g. in a panel). The text to scroll can be piped into zscroll or given as a positional argument. Zscroll allows for dynamically updating what text is scrolled without having to start a new zscroll instance.
+.SH BOOLEAN VALUES
+Boolean arguments can be specified in all common ways and in upper, lower, or mixed case (true, t, yes, y, and 1; false, f, no, n, and 0).
+.SH OPTIONS
+.TP
+\fB-h\fR, \fB --help\fR
+Print help text.
+.TP
+\fB-l LENGTH\fR, \fB --length=LENGTH\fR
+Specify a character length for the text to be scrolled in. If the text given is less than this length, zscroll will not scroll it but just print in place. (default: 40)
+.TP
+\fB-r BOOL\fR, \fB --reverse=BOOL\fR
+Specify whether the text should be scrolled in reverse order (from left to right). (default: false)
+.TP
+\fB-b PADDING\fR, \fB --before-text=PADDING\fR
+Specify static padding text that will always be displayed to the left of the scrolling section. (default: "")
+.TP
+\fB-a PADDING\fR, \fB --after-text=PADDING\fR
+Specify static padding text that will always be displayed to the right of the scrolling section. (default: "")
+.TP
+\fB-p PADDING\fR, \fB --scroll-padding=PADDING\fR
+Specify padding text that will be displayed in between the start and end of displayed text only when it is scrolling. (default: " - ")
+.TP
+\fB-s BOOL\fR, \fB --scroll=BOOL\fR
+Specify whether or not the text should be scrolled. If false, the text will never be scrolled even if it is long enough. This command is primarily meant for use with -m. (default: true)
+.TP
+\fB-m REGEXP OPTIONS\fR, \fB --match-text REGEXP OPTIONS\fR
+Specify a regexp search term to look for in the output of the corresponding --match-command. When found, the settings will be changed. Using this flag allows the user to specify any option (besides -m and -M, which will be ignored) and optionally the positional scroll-text argument multiple times. Settings that are not specified will default to the user-specified values outside of the --match-text or the base defaults (when those options were not set by the user). (default: none)
+.TP
+\fB-M COMMAND\fR, \fB --match-command=COMMAND\fR
+Specify a command to search the output of. This option is required for -m to work. The user can either specify one -M for all -m searches or an equal number of both. (default: none)
+.TP
+\fB-d TIME\fR, \fB --delay=TIME\fR
+Specify the delay between scroll steps. (default: 0.4)
+.TP
+\fB-u BOOL\fR, \fB --update-check=BOOL\fR
+Specify that the positional argument refers to a command that should be run to obtain the text to scroll. Whenever the output of this command changes, the text will be updated accordingly. (default: false)
+.TP
+\fB-U TIME\fR, \fB --update-interval=TIME\fR
+Specify the time in seconds to wait in between running update checking commands. This applies to the positional argument when -u/--update-check is specified and to commands specified with -M/--match-command. This may be useful if the scrolling text only needs to be updated infrequently or if continuously running the update checking command(s) is resource intensive. (default: 0)
+.TP
+\fB-n BOOL\fR, \fB --newline=BOOL\fR
+Add a newline after every update/step (may be necessary for use with panels). Takes no argument. (default: true)
+.TP
+\fB\-t TIME\fR, \fB \-\-timeout=TIME\fR
+Time in seconds to run before closing. An argument of zero implies infinite duration. (default: 0)
+.SH EXAMPLES
+These examples are meant for testing in the terminal (remove the "-n false" for use with panels).
+
+Scroll currently playing mpd song with mpc:
+.br
+$ zscroll -n false -b "playing: " "$(mpc current)"
+
+Continually update the playing song:
+.br
+$ zscroll -n false -u true -b "playing: " "mpc current"
+
+You can also pipe into zscroll:
+.br
+$ xtitle | zscroll -l 60
+
+An example that will stop scrolling the song when it is paused and change the before padding text depending on the state of the song:
+.br
+$ zscroll -n f -u t -b "x" -d 0.3 -M "mpc status" -m "playing" \\
+.br
+	"-b 'playing: '" -m "paused" "-b 'paused: ' -s f" "mpc current" &
+
+Note that settings specified with an -m will only apply if that text was just matched. In this case, the default -s is not altered, but the default -b is.
+
+.SH SEE ALSO
+lemonbar(1), polybar(1)
+.SH BUGS
+If you encounter any bugs, please make an issue on the online repository's bug tracker.
+.SH AUTHOR
+Fox Kiester <noct@posteo\&.net>
+.br
+Source: https://github.com/noctuid/zscroll
