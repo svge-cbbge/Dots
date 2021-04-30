@@ -1,4 +1,0 @@
-#! /bin/sh
-
-printf "(%s)&\n" "$2" | tmux load-buffer -
-tmux paste-buffer -t sxhkd
