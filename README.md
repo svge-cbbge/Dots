@@ -15,7 +15,7 @@ They're not super reliable and don't work with some terminals (Termite and urxvt
 
 ## Other
   
-Fonts used: 
+Fonts used:  
   [cherry](https://github.com/turquoise-hexagon/cherry)  
   [fontawesome](https://fontawesome.com/)  
   [nerd fonts](https://www.nerdfonts.com/)  
