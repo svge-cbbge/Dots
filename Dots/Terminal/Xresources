@@ -1,0 +1,52 @@
+
+URxvt.perl-ext-common: default,clipboard,...,config-reload
+URxvt*scrollBar: false
+URxvt*foreground: #1a2026
+URxvt.internalBorder:  15
+URxvt.font: xft:cherry:size=12
+
+urxvt*dynamicColors: on
+urxvt*depth: 32
+urxvt*background: #c2c6cf
+urxvt*borderColor: #c2c6cf
+
+Xft*dpi:                96
+Xft*antialias:          true
+
+! special
+*.foreground:   #0f0f0f
+*.background:   #ffffff
+*.cursorColor:  #232333
+
+! black
+*.color0:       #494a4c
+*.color8:       #707070
+
+! red
+*.color1:       #785A5A
+*.color9:       #b2908a
+
+! green
+*.color2:       #807E60
+*.color10:      #B5BC6D
+
+! yellow
+*.color3:       #DBBD7D
+*.color11:      #877f69
+
+! blue
+*.color4:       #4c5359
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #8C7681
+*.color13:      #cca8bb
+
+! cyan
+*.color6:       #608985
+*.color14:      #9FC2C2
+
+! white
+*.color7:       #999999
+*.color15:      #b0b0b0
+
