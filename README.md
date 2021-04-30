@@ -24,3 +24,5 @@ Fonts used:
 Color scheme and spotify module for polybar from [here](https://github.com/ChocolateBread799/dots)  
   
 Spotify themed with spicetify-cli and Midnight-Light from [spicetify-themes](https://github.com/morpheusthewhite/spicetify-themes/)  
+  
+Rofi uses config from [polybar-themes](https://github.com/adi1090x/polybar-themes)  
