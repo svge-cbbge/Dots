@@ -2,8 +2,9 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor DP-4 -d 1 2 3 4 5
-bspc monitor HDMI-0 -d 6 7 8 9 0
+# add your own bspwm config here
+#bspc monitor DP-4 -d 1 2 3 4 5
+#bspc monitor HDMI-0 -d 6 7 8 9 0
 
 bspc config border_width         12
 bspc config window_gap           16
@@ -20,9 +21,9 @@ bspc rule -a Screenkey manage=off
 
 xfce4-volumed &
 desknamer &
-xrandr --output DP-4 --primary  --mode 1920x1080 --rate 144 --output HDMI-0 --mode 1920x1080 --rate 144 --right-of DP-4  &
+# add your own monitor config here
+#xrandr --output DP-4 --primary  --mode 1920x1080 --rate 144 --output HDMI-0 --mode 1920x1080 --rate 144 --right-of DP-4  &
 xsetroot -cursor_name left_ptr &
 xset +fp ~/.fonts/ &
 sudo ~/set_performance.sh &
-sh ~/dark-mode &
 bspc config focus_follows_pointer true
