@@ -10,7 +10,7 @@ Bspwm module uses [desknamer.sh](https://gitlab.com/jallbrit/desknamer)
 
 ## Bspwm
 
-Triple borders are created by using a modified version of [neeasade's 2bspwm script](https://github.com/neeasade/dotfiles/blob/master/wm/.wm/scripts/visual/2bspwm) and (Sweet's chwb3)[https://github.com/wmutils/opt/pull/40] as I couldn't get [chwbn](https://github.com/neeasade/opt) working.  
+Triple borders are created by using a modified version of [neeasade's 2bspwm script](https://github.com/neeasade/dotfiles/blob/master/wm/.wm/scripts/visual/2bspwm) and [Sweet's chwb3](https://github.com/wmutils/opt/pull/40) as I couldn't get [chwbn](https://github.com/neeasade/opt) working.  
 They're not super reliable and don't work with some terminals (Termite and urxvt didn't work, while XTerm did).
 
 ## Other
