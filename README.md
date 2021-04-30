@@ -27,4 +27,5 @@ Spotify themed with spicetify-cli and Midnight-Light from [spicetify-themes](htt
   
 Rofi uses config from [polybar-themes](https://github.com/adi1090x/polybar-themes)  
 
-[Preview](svge-cbbge.github.com/Dots/main/UnixPorn.png)
+[Preview](shttps://github.com/svge-cbbge/Dots/blob/main/UnixPorn.png)
+https://github.com/svge-cbbge/Dots/blob/main/UnixPorn.png
